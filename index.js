@@ -10,6 +10,8 @@ app.get('/', (req, res) => {
 
 // Route to handle video chunk upload
 app.post('/upload', (req, res) => {
+  console.log(req)
+  console.log("request",req.post.fileName,req.body)
   const filePath = path.join(__dirname, 'uploads', req.body.fileName);
   const chunkIndex = parseInt(req.body.chunkIndex);
   const totalChunks = parseInt(req.body.totalChunks);
