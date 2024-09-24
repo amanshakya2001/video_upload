@@ -3,6 +3,12 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
+// Route to check if the server is running
+app.get('/', (req, res) => {
+  res.send('Server is running properly!');
+});
+
+// Route to handle video chunk upload
 app.post('/upload', (req, res) => {
   const filePath = path.join(__dirname, 'uploads', req.body.fileName);
   const chunkIndex = parseInt(req.body.chunkIndex);
@@ -20,6 +26,7 @@ app.post('/upload', (req, res) => {
   }
 });
 
+// Start the server
 app.listen(3000, () => {
-  console.log('Server running on port 3000');
+  console.log('Server is running on port 3000');
 });
