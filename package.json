@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/amanshakya2001/video_upload#readme",
   "dependencies": {
-    "express": "^4.21.0"
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-fileupload": "^1.5.1"
   }
 }
