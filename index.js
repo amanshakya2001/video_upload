@@ -20,12 +20,6 @@ app.get('/', (req, res) => {
 });
 
 // Route to handle video chunk upload
-<<<<<<< Updated upstream
-app.post('/upload', (req, res) => {
-  console.log(req)
-  console.log("request",req.post.fileName,req.body)
-  const filePath = path.join(__dirname, 'uploads', req.body.fileName);
-=======
 app.post('/upload/', (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
@@ -40,7 +34,6 @@ app.post('/upload/', (req, res) => {
   const filePath = path.join(uploadsDir, req.body.fileName);
   console.log("filepath", filePath);
   
->>>>>>> Stashed changes
   const chunkIndex = parseInt(req.body.chunkIndex);
   console.log("chunkIndex", chunkIndex);
   
